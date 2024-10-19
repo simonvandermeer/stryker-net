@@ -111,6 +111,7 @@ public class StrykerCli
 
         cmdConfigReader.RegisterCommandLineOptions(app, inputs);
         cmdConfigReader.RegisterInitCommand(app, _fileSystem, inputs, args);
+        cmdConfigReader.RegisterStartServerCommand(app, _fileSystem, inputs, args);
 
         app.OnExecute(() =>
         {

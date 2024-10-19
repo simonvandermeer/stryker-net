@@ -3,10 +3,13 @@ using System.IO;
 using System.IO.Abstractions;
 using System.Linq;
 using McMaster.Extensions.CommandLineUtils;
+using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using Stryker.Abstractions.Exceptions;
+using Stryker.Abstractions.Logging;
 using Stryker.Abstractions.Options;
 using Stryker.Abstractions.Options.Inputs;
+using Stryker.CLI.Server;
 
 namespace Stryker.CLI.CommandLineConfig;
 
@@ -67,6 +70,18 @@ public class CommandLineConfigReader
                 _console.WriteLine(configFilePath, new Style(Color.Cyan1));
                 _console.Write("The file is populated with default values, remove the options you don't need and edit the options you want to use. For more information on configuring stryker see: ");
                 _console.WriteLine("https://stryker-mutator.io/docs/stryker-net/configuration", new Style(Color.Cyan1));
+            });
+        });
+
+    public void RegisterStartServerCommand(CommandLineApplication app, IFileSystem fileSystem, IStrykerInputs inputs, string[] args) =>
+        app.Command("start-server", startServerCommandApp =>
+        {
+            startServerCommandApp.OnExecuteAsync(async (cancellationToken) =>
+            {
+                ApplicationLogging.LoggerFactory = new LoggerFactory();
+
+                var server = new StrykerServer(fileSystem, inputs);
+                await server.RunAsync(cancellationToken);
             });
         });
 

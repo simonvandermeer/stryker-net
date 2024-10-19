@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Common" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" />
+    <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="Serilog" />
     <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" />
   </ItemGroup>

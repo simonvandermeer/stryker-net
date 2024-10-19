@@ -40,7 +40,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Abstractions", "Str
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Configuration", "Stryker.Options\Stryker.Configuration.csproj", "{E80FD63A-510D-49E2-B1FE-B6CDD5BA106D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stryker.Utilities", "Stryker.Utilities\Stryker.Utilities.csproj", "{BDD19501-B2E3-4EFE-ACCD-8D11C99CCCED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Utilities", "Stryker.Utilities\Stryker.Utilities.csproj", "{BDD19501-B2E3-4EFE-ACCD-8D11C99CCCED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
